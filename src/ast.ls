@@ -1749,11 +1749,14 @@ class exports.Class extends Node
     proto = Var \prototype
     const ctor-name = \constructor$$
     var ctor, ctor-place
+    proto-props = {}
     import-proto-obj = (node, i) ->
       j = 0
       while j < node.items.length, j++
         prop = node.items[j]
         key = prop.key
+        if pp = proto-props[key.name || key.value] then pp.carp 'duplicate key'
+        else proto-props[key.name || key.value] = node.items[j]
         if (key instanceof Key and key.name is ctor-name)
         or (key instanceof Literal and key.value is "'#ctor-name'")
           node.carp 'redundant constructor' if ctor
@@ -2759,7 +2762,7 @@ UTILS =
       if (className == '[object Array]') {
         alength = a.length;
         blength = b.length;
-        if (first) { 
+        if (first) {
           switch (type) {
           case '===': result = alength === blength; break;
           case '<==': result = alength <= blength; break;

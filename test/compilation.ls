@@ -202,6 +202,12 @@ eq 'some js code!' bare '``some js code!``'
 compileThrows "a constructor can't be a generator" 1 'class => ->*'
 compileThrows "a generator is hushed by default" 1 '!->*'
 
+compileThrows "duplicate key" 2 """
+class Test
+  proto_prop: 1
+  proto_prop: ->
+"""
+
 # https://github.com/jashkenas/coffee-script/pull/3240#issuecomment-38344281
 eq '(function*(){\n  var body;\n  body = (yield fn).body;\n});' bare '->* {body} = yield fn'
 
