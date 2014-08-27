@@ -36,6 +36,7 @@ bin:
 scripts:
   pretest: 'make force && make force'
   test: 'make test'
+  'test-harmony': 'make test-harmony'
   posttest: 'git checkout -- lib'
 
 prefer-global: true

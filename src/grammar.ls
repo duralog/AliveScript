@@ -245,9 +245,10 @@ bnf =
 
     # The function literal can be either anonymous with `->`,
     o 'PARAM( ArgList OptComma )PARAM -> Block'
-    , -> L Fun $2, $6, /~/.test($5), /--|~~/.test($5), /!/.test($5)
+    , -> L Fun $2, $6, /~/.test($5), /--|~~/.test($5), /!/.test($5), /\*/.test($5)
     # or named with `function`.
     o 'FUNCTION CALL( ArgList OptComma )CALL Block' -> L Fun($3, $6)named $1
+    o 'GENERATOR CALL( ArgList OptComma )CALL Block' -> L Fun($3, $6, false, false, false, true).named $1
 
     # The full complement of `if` and `unless` expressions
     o 'IF Expression Block Else'      -> If $2, $3, $1 is \unless .addElse $4

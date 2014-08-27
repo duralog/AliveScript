@@ -60,8 +60,15 @@
       process.exit(1);
     }
   });
+  var files = fs.readdirSync("test");
 
-  fs.readdirSync("test").forEach(function(file){
+  if (process.execArgv.indexOf("--harmony") < 0 && process.execArgv.indexOf("--harmony-generators") < 0) {
+    files.splice(files.indexOf("generators.ls"), 1);
+  } else {
+    console.log("Testing with harmony.");
+  }
+
+  files.forEach(function(file){
     var stk, msg, m, ref, num, row, col, that, lines, line;
 
     if (!/\.ls$/i.test(file)) {
