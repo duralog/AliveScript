@@ -108,7 +108,7 @@ function runTests global.LiveScript
     else tint message
     if failedTests
       process.exit 1
-  
+
   files = dir \test
   unless '--harmony' in process.execArgv or '--harmony-generators' in process.execArgv
     say "Skipping --harmony tests"
