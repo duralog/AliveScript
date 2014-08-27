@@ -2060,7 +2060,7 @@ class exports.While extends Node
         @res-var = res = o.scope.assign \results$ empty
       if @res-var and (last instanceof While or has-loop)
         temp = o.scope.temporary \lresult
-        lines.unshift Assign (Var temp), Arr!, \=
+        lines.unshift Assign (Var temp), (if lines[*-1].objComp then Obj! else Arr!), \=
         lines[*-1]?=makeReturn temp
         mid += "#TAB#{Chain Var @res-var
           .add Index (Key \push), \., true
