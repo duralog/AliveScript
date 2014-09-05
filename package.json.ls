@@ -1,5 +1,5 @@
 name: 'AliveScript'
-version: '1.3.0'
+version: '1.2.4'
 
 description: 'AliveScript is a language which modifies LiveScript (soon: coffee-script, coco, ???) first by allowing transformations on the AST, and then again on the resulting JavaScript usiing [http://graspjs.com/](grasp).'
 
@@ -39,6 +39,7 @@ scripts:
   test: 'make test'
   'test-harmony': 'make test-harmony'
   posttest: 'git checkout -- lib'
+  all: 'make force && make test'
 
 prefer-global: true
 
@@ -49,6 +50,7 @@ repository:
 dependencies:
   'prelude-ls': '~1.1.0'
   optionator: '~0.3.0'
+  grasp: '~0.2.1'
 
 dev-dependencies:
   jison: '0.2.1'
