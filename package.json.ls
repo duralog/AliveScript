@@ -1,21 +1,22 @@
-name: 'LiveScript'
-version: '1.2.2'
+name: 'AliveScript'
+version: '1.3.0'
 
-description: 'LiveScript is a language which compiles to JavaScript. It has a straightforward mapping to JavaScript and allows you to write expressive code devoid of repetitive boilerplate. While LiveScript adds many features to assist in functional style programming, it also has many improvements for object oriented and imperative programming.'
+description: 'AliveScript is a language which modifies LiveScript (soon: coffee-script, coco, ???) first by allowing transformations on the AST, and then again on the resulting JavaScript usiing [http://graspjs.com/](grasp).'
 
 keywords:
   'language'
   'compiler'
-  'coffeescript'
-  'coco'
   'javascript'
-  'functional'
+  'coco'
+  'coffeescript'
+  'livescript'
+  'grasp'
 
-author: 'George Zahariev <z@georgezahariev.com>'
+author: 'duralog <funisher@gmail.com>'
 homepage: 'http://livescript.net'
-bugs: 'https://github.com/gkz/LiveScript/issues'
+bugs: 'https://github.com/duralog/AliveScript/issues'
 licenses:
-  type: 'MIT', url: 'https://raw.githubusercontent.com/gkz/LiveScript/master/LICENSE'
+  type: 'MIT', url: 'https://raw.githubusercontent.com/duralog/AliveScript/master/LICENSE'
   ...
 
 engines:
@@ -43,7 +44,7 @@ prefer-global: true
 
 repository:
   type: 'git'
-  url: 'git://github.com/gkz/LiveScript.git'
+  url: 'git://github.com/duralog/AliveScript.git'
 
 dependencies:
   'prelude-ls': '~1.1.0'
