@@ -1,6 +1,6 @@
 # AliveScript
 
-is a kind of mirror of [LiveScript](https://github.com/gkz/LiveScript). we use this version in production, and is only intended to be a public place we can show off any improvements / changes / bugfixes. not intended for any real use. the LiveScript part will continue compiling LiveScript as usual)
+is a kind of mirror of [LiveScript](https://github.com/gkz/LiveScript). we use this version in production. it only intended to be a public place we can show off any improvements / changes / bugfixes. not intended for any real use. the LiveScript part will continue compiling LiveScript as usual)
 
 some differences are
  - generator support

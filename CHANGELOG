@@ -1,1 +1,10 @@
-See http://livescript.net/#changelog
+
+# AliveScript v1.2.5
+
+## v1.3.0
+ - [x] compiles LiveScript
+ - [ ] compiles coffee-script
+
+### v1.2.4 -> v1.2.5
+ - minor fix for redefining a prototype built-in like, eg. `::toString = -> ...`
+
