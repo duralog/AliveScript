@@ -1755,8 +1755,8 @@ class exports.Class extends Node
       while j < node.items.length, j++
         prop = node.items[j]
         key = prop.key
-        if pp = proto-props[key.name || key.value] then pp.carp 'duplicate key'
-        else proto-props[key.name || key.value] = node.items[j]
+        if (pp = proto-props[k = key.name || key.value]) and proto-props.hasOwnProperty k then pp.carp 'duplicate key'
+        else if proto-props.hasOwnProperty k then proto-props[k] = node.items[j]
         if (key instanceof Key and key.name is ctor-name)
         or (key instanceof Literal and key.value is "'#ctor-name'")
           node.carp 'redundant constructor' if ctor
