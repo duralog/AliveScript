@@ -1755,7 +1755,11 @@ class exports.Class extends Node
       while j < node.items.length, j++
         prop = node.items[j]
         key = prop.key
-        if (pp = proto-props[k = key.name || key.value]) and proto-props.hasOwnProperty k then pp.carp 'duplicate key'
+        if (pp = proto-props[k = key.name || key.value]) and proto-props.hasOwnProperty k
+          if typeof pp.carp is \function
+            pp.carp "duplicate object prototype '#{k}'"
+          else
+            throw new Error "duplicate object prototype '#{k}'"
         else if proto-props.hasOwnProperty k then proto-props[k] = node.items[j]
         if (key instanceof Key and key.name is ctor-name)
         or (key instanceof Literal and key.value is "'#ctor-name'")
