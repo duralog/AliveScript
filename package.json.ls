@@ -1,5 +1,5 @@
 name: 'AliveScript'
-version: '1.2.6'
+version: '1.2.7'
 
 description: 'AliveScript is a language which modifies LiveScript (soon: coffee-script, coco, ???) first by allowing transformations on the AST, and then again on the resulting JavaScript usiing [http://graspjs.com/](grasp).'
 
