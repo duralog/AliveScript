@@ -202,7 +202,7 @@ eq 'some js code!' bare '``some js code!``'
 compileThrows "a constructor can't be a generator" 1 'class => ->*'
 compileThrows "a generator is hushed by default" 1 '!->*'
 
-compileThrows "duplicate key" 2 """
+compileThrows "duplicate prototype member 'proto_prop'" 2 """
 class Test
   proto_prop: 1
   proto_prop: ->

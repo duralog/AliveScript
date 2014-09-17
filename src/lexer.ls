@@ -194,7 +194,9 @@ exports import
         return 3
       fallthrough
     default
-      break if id in KEYWORDS_SHARED
+      if id in KEYWORDS_SHARED
+        # console.log "whhaat?"
+        break
       @carp "reserved word \"#id\"" if id in KEYWORDS_UNUSED
       if not last.1 and last.0 in <[ FUNCTION GENERATOR LABEL ]>
         last <<< {1: id, -spaced}
